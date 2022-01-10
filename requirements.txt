@@ -5,3 +5,6 @@ Django
 python-decouple
 gunicorn
 psycopg2-binary
+pillow
+django-allauth
+django-crispy-forms

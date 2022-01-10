@@ -1,0 +1,62 @@
+{% extends "account/base.html" %}
+{% load static %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+    <div class="col-md-3 sidebar">
+        <div class="logo_sidebar">
+            <h2 class="logo">
+                <img class="img_logo_sidebar" src="{% static 'accounts/img/logo.png' %}" alt="">iMOBILI
+            </h2>
+        </div>
+        <div class="corpo_sidebar">
+            <div>
+                <h2 class="titulo cor_branca">Cadastre-se</h2>
+            </div>
+            <div>
+                <p class="cor_branca descricao">As melhores casas</p>
+                <p style="margin-top:-20px" class="cor_branca descricao">Nos melhores preços</p>
+                <br>
+                <br>
+                <a class="btn_logar" href="{% url 'account_login' %}">LOGAR</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="container d-flex flex-column">
+            <div class="row vh-100">
+                <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+                    <div class="d-table-cell align-middle">
+                        <div class="mt-4">
+                            <div class="area_cadastrar">
+                                <div class="text-center mb-3">
+                                    <h2 class="titulo_area_cadastrar">Cadastre-se</h2>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="m-sm-4">
+                                            <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}" novalidate>
+                                              {% csrf_token %}
+                                              {{ form|crispy }}
+                                              {% if redirect_field_value %}
+                                              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                                              {% endif %}
+                                                <div class="text-center mb-3">
+                                                    <button class="btn_cadastrar" type="submit">Cadastrar</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
