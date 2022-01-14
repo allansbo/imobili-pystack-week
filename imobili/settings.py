@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     # local apps
     'imobili.core',
     'accounts.apps.AccountsConfig',
+    'plataforma.apps.PlataformaConfig',
 ]
 
 MIDDLEWARE = [
