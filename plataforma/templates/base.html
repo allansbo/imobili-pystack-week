@@ -14,7 +14,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg_navbar">
         <a class="navbar-brand" href="{% url 'plataforma:home' %}">
 					<img width="40" src="{% static 'accounts/img/logo.png' %}">
-							&nbsp<h3 class="font_logo">IMOBI</h3></a>
+							&nbsp<h3 class="font_logo">IMOBILI</h3></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
 				 data-target="#navbarNav" aria-controls="navbarNav"
 				 aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="">Agendamento</a>
+              <a class="nav-link" href="{% url 'plataforma:agendamentos' %}">Agendamentos</a>
             </li>
           </ul>
         </div>
